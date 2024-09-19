@@ -8,6 +8,8 @@
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "mongoose": "^8.4.1",
+    "openai": "^4.62.1",
+    "react-openai-api": "^1.0.2",
     "ws": "^8.17.0"
   }
 }
