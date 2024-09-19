@@ -20,9 +20,6 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieparser());
 
-// const client = new OpenAI({
-//     apiKey: 'sk-fVaV07mkXmexPpCRK1JTXvUi9v7CcGCEB7U22wizEyT3BlbkFJPwy-0aeOAwCl_Z0nGwLTsL6A-AJ_cHMYHiXCt9qXgA',  // Ensure to set this in your environment variables
-//   });
 
 //   const openai = new OpenAI(client);
 
