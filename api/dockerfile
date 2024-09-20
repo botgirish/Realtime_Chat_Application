@@ -1,0 +1,17 @@
+
+FROM node:18
+
+WORKDIR /usr/src/app
+
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the rest of the backend code
+COPY . .
+
+# Expose port for the API
+EXPOSE 4000
+
+# Command to run the backend (index.js)
+CMD ["node", "index"]

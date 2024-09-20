@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import axios from "axios";
 import { UserContext } from "./UserContext";
+import backgroundImage from './assets/flat-lay-clean-office-desk.jpg';
 export default function Register(){
 
     const [username,setUsername] = useState('');
@@ -17,7 +18,15 @@ export default function Register(){
      }
 
     return(
-       <div className="flex items-center h-screen bg-green-100">
+        <div 
+        className="flex items-center h-screen"
+        style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+        }}
+     >
             <form className=" mx-auto w-72" onSubmit={handleregister}>
             <input value={username} onChange={ev=>setUsername(ev.target.value)} className=" text-center font-serif rounded-md p-3 block w-full mb-2 hover:shadow-md hover:bg-slate-100" type="text" placeholder="username"></input>
             <input value={password} onChange={ev=>setPassword(ev.target.value)} className="text-center font-serif rounded-md p-3 block w-full mb-2 hover:shadow-md hover:bg-slate-100" type="password" placeholder="password" />
@@ -27,14 +36,14 @@ export default function Register(){
             <div className=" font-serif p-2 text-center">
                 {isloggedorregister === 'register' && (
                     <div>
-                    Aldready a member!! 
-                <button onClick={()=>{setIsloggedorregister('login')}}>Login</button> Here
+                    Already a Member!! 
+                <button className=" underline" onClick={()=>{setIsloggedorregister('login')}}>Login</button> Here
                     </div>
                     )}
                     {isloggedorregister === 'login' && (
                         <div>
-                            Dont have an account!! 
-                            <button onClick={()=>{setIsloggedorregister('register')}}>Registor</button> Here!
+                            Don't have an Account!! 
+                            <button className=" underline" onClick={()=>{setIsloggedorregister('register')}}>Register</button> Here!
                         </div>
                     )}
             </div>

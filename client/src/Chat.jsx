@@ -239,27 +239,38 @@ function handlemessage(ev) {
   const messageswithoutdupes = uniqBy(messages, '_id');
 
   return (
-    <div className="flex h-screen">
+    <div className=" flex h-screen">
       {/* Left */}
-      <div className="bg-black w-1/4 p-3 flex flex-col">
+      <div
+        className="w-1/4 p-3 flex flex-col"
+        style={{
+          background: "linear-gradient(273deg, rgba(106,156,137,1) 0%, rgba(233,239,236,1) 60%)",
+          color: "white", // Adjust text color if needed
+          borderRight: "2px solid rgba(255, 255, 255, 0.2)", // Optional border
+        }}
+        
+      >      
         <div className="flex-grow">
-          <div className="flex justify-between rounded-lg bg-black items-center">
+          <div className="flex justify-between rounded-lg items-center" style={{
+    color: "",// Text color
+    borderColor: "#6a8c89",  // Border color
+  }}>
   
             
 
               <div className=" flex flex-row gap-1 items-center ml-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 bg-yellow-400 rounded-full w-10 h-10 p-1">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 bg-[#20433e] rounded-full w-10 h-10 p-1">
   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
 </svg>
 
-              <div className=" text-yellow-300 text-lg px-2 border border-yellow-400 rounded-full"> {onlinepeople[id] || offlinepeople[id]}</div>
+              <div className=" text-[#16423c] text-lg px-2 border border-[#16423c] rounded-full"> {onlinepeople[id] || offlinepeople[id]}</div>
               </div>
 
               <div className=" flex p-2 items-center gap-1">
- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-12 bg-yellow-400 mt-2 rounded-xl">
+ <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-12 bg-[#16423c] mt-2 rounded-xl">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
               </svg>
-              <div className="text-yellow-400 bg-black text-center rounded-md text-xl font-bold font-serif">U&ME</div>
+              <div className="text-[#4b6663] bg text-center rounded-md text-xl font-bold font-serif">THERAWIN</div>
               </div>
              
             
@@ -270,9 +281,9 @@ function handlemessage(ev) {
               key={userid}
               onClick={() => {
                 setSelecteduserid(userid);
-                setSelectedGroupId(0);
+                setSelectedGroupId(null);
               }}
-              className={"p-2 bg-yellow-300 hover:bg-yellow-400 cursor-pointer border-b rounded-md flex gap-2 items-center mt-2 " + (userid === selecteduserid ? "bg-red-400" : "")}
+              className={"p-2 bg-[#6a8c89] hover:bg-[#4a6561] cursor-pointer border-b rounded-md flex gap-2 items-center mt-2 " + (userid === selecteduserid ? "bg-red-400" : "")}
             >
               <Avatar online={true} username={onlinepeople[userid]} userid={userid} />
               <span className="font-mono">{onlinepeople[userid]}</span>
@@ -284,9 +295,9 @@ function handlemessage(ev) {
               key={userid}
               onClick={() => {
                 setSelecteduserid(userid);
-                setSelectedGroupId(0);
+                setSelectedGroupId(null);
               }}
-              className={"p-2 bg-yellow-300 hover:bg-yellow-400 cursor-pointer border-b rounded-lg flex gap-2 items-center mt-2 " + (userid === selecteduserid ? "bg-red-400" : "")}
+              className={"p-2 bg-[#6a8c89] hover:bg-[#4a6561] cursor-pointer border-b rounded-lg flex gap-2 items-center mt-2 " + (userid === selecteduserid ? "bg-red-400" : "")}
             >
               <Avatar online={false} username={offlinepeople[userid]} userid={userid} />
               <span className="font-mono">{offlinepeople[userid]}</span>
@@ -297,7 +308,7 @@ function handlemessage(ev) {
             <div
               key={group._id}
               onClick={() => {setSelectedGroupId(group._id); setSelecteduserid(false);}}
-              className={"p-2 bg-yellow-300 hover:bg-yellow-400 cursor-pointer border-b rounded-md flex gap-2 items-center mt-2 " + (group._id === selectedGroupId ? "bg-red-400" : "")}
+              className={"p-2 bg-[#6a8c89] hover:bg-[#4a6561] cursor-pointer border-b rounded-md flex gap-2 items-center mt-2 " + (group._id === selectedGroupId ? "bg-red-400" : "")}
             >
               <Avatar online={true} username={'Group'} />
               <span className="font-mono">{group.name}</span>
@@ -317,12 +328,12 @@ function handlemessage(ev) {
         <div className=" flex flex-row justify-normal">
 
         {(buttonn) && (
-          <button onClick={Handlegrp} className=" bg-yellow-300 hover:bg-yellow-400 rounded-xl px-4 py-1 mx-auto font-mono">Join-grp</button>
+          <button onClick={Handlegrp} className=" bg-[#16423c] hover:bg-[#4a6561] rounded-xl px-4 py-1 mx-auto font-mono">Join-grp</button>
         )}
        {!buttonn && 
-        <button onClick={Handlegrpleft} className=" bg-yellow-300 hover:bg-yellow-400 rounded-xl px-4 py-1 mx-auto font-mono">Leave-grp</button>
+        <button onClick={Handlegrpleft} className=" bg-[#16423c] hover:bg-[#4a6561] rounded-xl px-4 py-1 mx-auto font-mono">Leave-grp</button>
         }
-        <button onClick={HandleLogout} className="bg-yellow-300 hover:bg-yellow-400 rounded-xl px-2 py-1 w-20 mx-auto font-mono">
+        <button onClick={HandleLogout} className="bg-[#16423c] hover:bg-[#4a6561] rounded-xl px-2 py-1 w-20 mx-auto font-mono">
           Logout
         </button>
 
@@ -331,11 +342,26 @@ function handlemessage(ev) {
       </div>
 
       {/* Right */}
-      <div className="bg-black border-l-2 border-gray-800 w-3/4 flex flex-col p-2">
-        <div className="flex-grow bg-black rounded-md shadow-xl">
-          {!selecteduserid && !selectedGroupId && (
+      <div className="border-l-2 w-3/4 flex flex-col p-2"
+      style={{
+        background: "linear-gradient(97deg, rgba(106,156,137,1) 0%, rgba(233,239,236,1) 94%)",
+        color: "white", // Adjust text color if necessary
+        borderRight: "2px solid rgba(255, 255, 255, 0.2)", // Optional border
+      }}
+      
+      >
+      <div
+  className="flex-grow rounded-md shadow-xl"
+  style={{
+    background: "linear-gradient(97deg, rgba(106,156,137,1) 0%, rgba(233,239,236,1) 94%)",
+    color: "white", // Adjust text color if necessary
+    borderRight: "2px solid rgba(255, 255, 255, 0.2)", // Optional border
+  }}
+  
+  
+>          {!selecteduserid && !selectedGroupId && (
             <div className="flex flex-grow h-full items-center justify-center">
-              <div className="text-gray-400 text-3xl"> &larr; Select a conversation!</div>
+              <div className="text-gray-700 text-3xl"> &larr; Select a conversation!</div>
             </div>
           )}
 
@@ -343,21 +369,24 @@ function handlemessage(ev) {
   <div className="relative h-full">
     <div className="overflow-y-scroll absolute inset-0">
       {messageswithoutdupes.map((message) => (
-        <div className={message.sender === id ? "text-right" : "text-left"} key={message._id}>
-          {message.sender !== id && selectedGroupId && (  // Display the sender's name if it's not the current user
-            <div className="text-left px-3 py-1 text-sm font-semibold text-gray-400 mt-2 rounded-full">
-             - {onlinepeople[message.sender] || offlinepeople[message.sender]} {/* Sender's name */}
-            </div>
-          )}
+        <div className={message.sender === id ? "text-right" : "text-left"}>
+          {(message.sender !== id) && selectedGroupId && ( 
+  // Ensure the sender exists in online or offline people
+  (onlinepeople[message.sender] || offlinepeople[message.sender]) && (
+    <div className="text-left px-3 py-1 text-sm font-semibold text-[#16423c] mt-2 rounded-full">
+      - {onlinepeople[message.sender] || offlinepeople[message.sender]} {/* Sender's name */}
+    </div>
+  )
+)}
           <div
             className={
-              "text-left inline-block px-4 py-2 my-1 rounded-md text-sm " +
+              "text-left inline-block px-4 py-2 my-1 rounded-md text-sm text-[#16423c] " +
               (message.sender === id
-                ? "bg-slate-400 mr-2 ml-3 font-mono"
-                : "bg-yellow-300 mr-10 ml-2 font-mono")
+                ? "bg-[#688d88] mr-2 ml-3 font-mono text-slate-100"
+                : "bg-[#cadad2] mr-10 ml-2 font-mono")
             }
           >
-            <div key={message._id} className="flex flex-row items-center gap-0">
+            <div className="flex flex-row items-center">
               {message.text}
             </div>
           </div>
@@ -376,10 +405,10 @@ function handlemessage(ev) {
               value={newmsgtext}
               onChange={(ev) => setnewmsgtext(ev.target.value)}
               type="text"
-              className="flex-grow rounded-lg p-2 ml-1 bg-gray-800 text-slate-300"
+              className="flex-grow rounded-lg p-2 ml-1 bg-transparent border border-[#16423c] text-slate-300 shadow-xl "
             />
-            <button type="submit" className="bg-yellow-300 hover:bg-yellow-400 px-2 mr-5 rounded-md">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <button type="submit" className="bg-[#16423c] hover:bg-[#3b4a48] px-2 mr-5 rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 ">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
               </svg>
             </button>

@@ -1,8 +1,8 @@
 export default function Avatar({ username, userid, online }) {
     return (
-      <div className="relative w-8 h-8 ml-3 flex rounded-full items-center bg-black">
+      <div className="relative w-8 h-8 ml-3 flex rounded-full items-center bg-[#16423c]">
         {/* Display the first letter of the username */}
-        <div className="w-full text-center text-yellow-300">
+        <div className="w-full text-center text-white">
           {username[0]}
         </div>
   
@@ -19,7 +19,7 @@ export default function Avatar({ username, userid, online }) {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="absolute size-6 bg-yellow-400 rounded-xl ml-1 "
+            className="absolute size-6 bg-black rounded-xl ml-1 "
           >
             <path
               strokeLinecap="round"
