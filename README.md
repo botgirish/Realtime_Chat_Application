@@ -1,4 +1,4 @@
-real Time Chat Appilication Using Mern Stack
+Real Time Chat Appilication Using Mern Stack
 
 Name: Girish Sai Krishna Akula 
 
