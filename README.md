@@ -1,10 +1,10 @@
 # Real Time Chat Appilication Using Mern Stack
 
-Name: Girish Sai Krishna Akula 
+Name: Hruthwik Rajesh Kusuma
 
-Roll: 2201EE06
+Roll: 2201CS43
 
-Dept.: Electrical and Electronics Engineering
+Dept.: Computer Science and Engineering
 
 University: IIT Patna
 
