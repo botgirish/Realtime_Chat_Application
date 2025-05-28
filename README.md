@@ -1,4 +1,4 @@
-# Real Time Chat Appilication Using Mern Stack
+# Real Time Chat Application Using Mern Stack
 
 Name: Hruthwik Rajesh Kusuma
 
